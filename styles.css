@@ -1,0 +1,626 @@
+/* CUSTOM PROPS */
+:root {
+  --body-text: #83869a;
+  --dark: #13183f;
+  --primary: #f74780;
+}
+
+
+/* GLOBAL */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  background-color: #fff;
+  background-image: linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  color: var(--body-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+*:focus {
+  outline: 2px dashed var(--primary);
+  outline-offset: 3px;
+}
+
+
+/* AUTOFILL-STYLES */
+/*input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: transparent;
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}*/
+
+
+/* PLACEHOLDER-STYLES */
+/*::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  color: rgba(52, 49, 61, 0.5);
+  opacity: 1;
+}*/
+
+
+/* VISUALLY-HIDDEN */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1190px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* LOGO */
+.logo {
+  display: block;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo:active {
+  opacity: 0.6;
+}
+
+.logo__img {
+  flex-shrink: 0;
+  display: block;
+}
+
+
+/* LOGO-CTA */
+.logo-cta__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-cta__logo {
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+
+/* BUTTON */
+.button {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 9px 24px 11px;
+  border: 0;
+  border-radius: 28px;
+  background-color: var(--dark);
+  color: #fff;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #666ca3;
+}
+
+.button--primary {
+  padding: 15px 38px;
+  min-width: 167px;
+  background-color: #f02aa6;
+  background: var(--gradient-1, linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%));
+}
+
+.button--secondary {
+  background-color: #4851ff;
+  background-image: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+}
+
+.button--primary:hover::after,
+.button--secondary:hover::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  content: "";
+}
+
+.button:active {
+  opacity: 0.6;
+}
+
+
+/* STATS-CARD */
+.stats-card {
+  padding: 16px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 34px 54px 0px rgba(6, 22, 141, 0.16);
+}
+
+.stats-card__title {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.stats-card__value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: normal;
+  color: var(--dark);
+}
+
+
+/* CARD */
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 56px 28px 32px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+}
+
+.card--primary {
+  padding: 24px 28px 32px;
+  background-color: var(--primary);
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+}
+
+.card__title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: normal;
+  color: var(--dark);
+}
+
+.card--primary .card__title {
+  margin-bottom: 0;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff;
+}
+
+.card__icon {
+  position: absolute;
+  z-index: 1;
+  left: 28px;
+  top: -24px;
+}
+
+.card__description {
+  flex-grow: 1;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.card__link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 28px;
+  color: var(--primary);
+}
+
+.card__link:hover {
+  color: #ffa7c3;
+}
+
+.card__link:active {
+  opacity: 0.6;
+}
+
+
+
+/* MAIN-CONTENT */
+.main-content {
+  flex-grow: 1;
+}
+
+
+/* SITE-HEADER */
+.site-header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+/* HERO */
+.hero {
+  padding-top: 22px;
+  padding-bottom: 45px;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
+.hero__heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: normal;
+  color: var(--dark);
+}
+
+.hero__description {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.hero__img-stats {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__picture {
+  display: block;
+}
+
+.hero__img {
+  display: block;
+  border-radius: 50%;
+}
+
+.hero__stats-list {
+  margin: 0;
+}
+
+.hero__course-hour-stats-card {
+  position: absolute;
+  z-index: 1;
+  right: 100px;
+  bottom: -24px;
+  min-width: 155px;
+}
+
+.hero__members-stats-card {
+  position: absolute;
+  z-index: 1;
+  top: -24px;
+  right: -20px;
+}
+
+
+/* POPULAR-COURSES */
+.popular-courses {
+  padding-top: 45px;
+  padding-bottom: 80px;
+}
+
+.popular-courses__card:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+
+/* SITE-FOOTER */
+.site-footer {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background-color: var(--dark);
+}
+
+
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+}
+
+
+@media only screen and (min-width: 350px) {
+  .hero__heading {
+    margin-bottom: 26px;
+    font-size: 40px;
+  }
+
+  .hero__course-hour-stats-card {
+    right: 135px;
+  }
+
+  .hero__members-stats-card {
+    right: -37px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .card--primary {
+    padding: 56px 32px 32px;
+  }
+
+  .card__icon {
+    left: 32px;
+  }
+
+  .popular-courses {
+    padding-top: 115px;
+    padding-bottom: 30px;
+  }
+
+  .popular-courses__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .popular-courses__card {
+    width: calc((100% - 10px) / 2);
+  }
+
+  .popular-courses__card, .popular-courses__card:not(:last-child) {
+    margin-bottom: 56px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image:
+      url("../img/body-pill-bg.svg"),
+      linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+    background-attachment: scroll, fixed;
+    background-size: 551px 552px, auto 100%;
+    background-position: right -254px top -48px, left top;
+  }
+
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .site-header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .hero {
+    padding-top: 26px;
+    padding-bottom: 80px;
+  }
+
+  .hero__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero__info {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  .hero__heading {
+    margin-bottom: 25px;
+  }
+
+  .hero__description {
+    margin-bottom: 25px;
+  }
+
+  .hero__img-stats {
+    margin-right: 41px;
+  }
+
+  .hero__img {
+    width: 216px;
+    height: 383px;
+    border-radius: 159px;
+  }
+
+  .hero__course-hour-stats-card {
+    bottom: -37px;
+    left: -45px;
+    right: auto;
+  }
+
+  .hero__members-stats-card {
+    top: -13px;
+    right: -51px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    background-image:
+      url("../img/body-pill-bg-desktop.svg"),
+      linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+    background-size: 806px 807px, auto 100%;
+    background-position: right -395px top -126px, left top;
+  }
+
+  .stats-card {
+    padding: 20px 24px;
+  }
+
+  .stats-card__title {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .stats-card__value {
+    font-size: 40px;
+  }
+
+  .hero__img-stats {
+    margin-right: 54px;
+  }
+
+  .hero__img {
+    width: 317px;
+    height: 560px;
+  }
+
+  .hero__course-hour-stats-card {
+    bottom: 30px;
+  }
+
+  .hero__members-stats-card {
+    top: 0;
+    right: -10px;
+  }
+
+  .card {
+    padding: 64px 32px 40px;
+  }
+
+  .card--primary {
+    padding: 64px 32px 32px;
+  }
+
+  .card__title {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  .card--primary .card__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .popular-courses {
+    padding-top: 54px;
+    padding-bottom: 60px;
+  }
+
+  .popular-courses__card {
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  body {
+    font-size: 18px;
+    line-height: 28px;
+    background-position: left calc(50% + 587px) top -79px, left top;
+  }
+
+  .logo__img {
+    width: 114px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  .button {
+    padding: 14px 32px;
+    font-size: 18px;
+  }
+
+  .button--primary {
+    padding: 19px 32px 16px;
+    border-radius: 32px;
+  }
+
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 67px;
+  }
+
+  .hero__info {
+    max-width: 457px;
+  }
+
+  .hero__heading {
+    margin-bottom: 29px;
+    font-size: 56px;
+  }
+
+  .hero__description {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .hero__course-hour-stats-card {
+    min-width: 200px;
+    bottom: 98px;
+    left: -120px;
+  }
+
+  .hero__members-stats-card {
+    min-width: 155px;
+    top: 103px;
+    right: -118px;
+  }
+}
